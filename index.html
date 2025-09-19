@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LonelySafe</title>
+  <link rel="stylesheet" href="inicio.css" />
+
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo-container">
+      <img src="imag/ola.png" alt="Logo" class="logo" />
+      <span class="brand">LonelySafe</span>
+    </div>
+    <nav class="nav-links">
+        <a href="#">Home</a>
+        <a href="contacto.html">About</a>
+    
+      <a href="SignUp.html">Sign Up</a>
+      <a href="SingIn2.php">Sign In</a>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <div class="welcome-box">
+      <h1>¡WELCOME!</h1>
+    </div>
+  </main>
+  
+  <section class="intro">
+    <h1>Introduccion</h1>
+    <h2>Bienvenidos a nuestro proyecto de seguridad inteligente:</h2>
+    <p>
+      Estamos desarrollando una puerta de seguridad controlada por un sistema inteligente que protege tu hogar de manera eficiente y moderna. A través de una página web, el usuario podrá iniciar sesión y conectarse directamente con el dispositivo. Si alguien intenta ingresar sin permiso, se enviará una notificación de inmediato.
+    </p>
+    <p>
+      La puerta cuenta con una contraseña configurada mediante Arduino, lo que permite una integración segura entre el mundo físico y digital. Nuestro objetivo es ofrecer una solución accesible, confiable y fácil de usar, combinando tecnología web, electrónica y control remoto para mejorar la seguridad del día a día.
+    </p>
+  </section>
+  
+
+  <footer class="footer">
+    <!-- Tu texto de copyright -->
+     <p><strong>Copyright (©) 2025 - The Lonely Boys</strong></p>
+    <p>El contenido de este sitio, incluyendo textos, diseños y código, es propiedad del equipo desarrollador y no puede ser reproducido sin autorización previa.</p>
+  </footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.body.classList.add('fade-in');
+
+  document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href && !href.startsWith('#') && !href.startsWith('javascript')) {
+        e.preventDefault();
+        document.body.classList.remove('fade-in');
+        document.body.classList.add('fade-out');
+        setTimeout(() => {
+          window.location.href = href;
+        }, 600); // Debe coincidir con la duración de la transición
+      }
+    });
+  });
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.body.classList.add('fade-in');
+
+  // Añadir animación para la sección .intro
+  setTimeout(() => {
+    document.querySelector('.intro').classList.add('show');
+  }, 1500); // después de que termine la animación del texto
+
+  // Manejo de transición entre páginas
+  document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href && !href.startsWith('#') && !href.startsWith('javascript')) {
+        e.preventDefault();
+        document.body.classList.remove('fade-in');
+        document.body.classList.add('fade-out');
+        setTimeout(() => {
+          window.location.href = href;
+        }, 600);
+      }
+    });
+  });
+});
+</script>
+
+
+</body>
+</html>

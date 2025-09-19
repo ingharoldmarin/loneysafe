@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="SignUp.css" />
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo-container">
+          <img src="imag/ola.png" alt="Logo" class="logo" />
+          <span class="brand">LonelySafe</span>
+        </div>
+        <nav class="nav-links">
+            <a href="inicio.html">Home</a>
+            <a href="contacto.html">About</a>
+            <a href="SignUp.html">Sign Up</a>
+            <a href="SingIn2.php">Sign In</a>
+        </nav>
+    </header>
+      
+    <section id="signup">
+        <form action="SingUp.php" method="post" enctype="multipart/form-data">
+          <input type="text" name="Nombre" placeholder="Name" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <input type="file" name="imagen"> <!-- imagen ya NO es obligatoria -->
+          <input type="password" name="password" placeholder="Password" required>
+      
+          <div class="social-buttons">
+            <button type="button">
+                <img src="imag/pildora9-6-22google-digitalizatec-fondo-azul.png" alt="Google">
+            </button>
+            <button type="button">
+                <img src="imag/facebook.png" alt="Facebook">
+            </button>
+            <button type="button">
+                <img src="imag/x.png" alt="X">
+            </button>
+          </div>
+      
+          <button type="submit" class="signup-submit">Sign Up</button>
+        </form>
+    </section>
+
+    <div class="contenido"></div>
+
+    <footer class="footer">
+        <p><strong>Copyright (©) 2025 - The Lonely Boys</strong></p>
+        <p>El contenido de este sitio, incluyendo textos, diseños y código, es propiedad del equipo desarrollador y no puede ser reproducido sin autorización previa.</p>
+    </footer>
+
+
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.body.classList.add('fade-in');
+
+  document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href && !href.startsWith('#') && !href.startsWith('javascript')) {
+        e.preventDefault();
+        document.body.classList.remove('fade-in');
+        document.body.classList.add('fade-out');
+        setTimeout(() => {
+          window.location.href = href;
+        }, 600); // Debe coincidir con la duración de la transición
+      }
+    });
+  });
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // Efecto de fade-in de toda la página
+  document.body.classList.add('fade-in');
+
+  // Efecto del formulario
+  const form = document.querySelector('#signup form');
+  setTimeout(() => {
+    form.classList.add('show');
+  }, 200); // Retardo leve para que se vea más natural
+
+  // Animación de salida al cambiar de página
+  document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href && !href.startsWith('#') && !href.startsWith('javascript')) {
+        e.preventDefault();
+        document.body.classList.remove('fade-in');
+        document.body.classList.add('fade-out');
+        setTimeout(() => {
+          window.location.href = href;
+        }, 600);
+      }
+    });
+  });
+});
+</script>
+
+
+</body>
+</html>
+

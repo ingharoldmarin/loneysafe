@@ -1,0 +1,200 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body {
+    background: linear-gradient(120deg, #0d0f3c, #1a0258, #ff004c);
+    min-height: 100vh;
+    color: white;
+  }
+  
+  .navbar {
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    margin: 1rem;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 2rem;
+    font-size: 1.1rem;
+    border-left: 1px solid white;
+    padding-left: 2rem;
+  }
+  
+
+  
+  .nav-links a:hover {
+    text-decoration: underline;
+  }
+  
+ .main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh; /* puedes ajustar */
+  margin-top: 200px; /* baja el cuadro */
+}
+
+  .welcome-box {
+    background: linear-gradient(to right, rgba(50,50,90,0.6), rgba(200,0,100,0.4));
+    padding: 12rem 30rem;
+    border-radius: 4rem;
+    text-align: center;
+    backdrop-filter: blur(10px);
+  }
+  
+  .welcome-box h1 {
+    font-size: 4rem;
+    font-weight: bold;
+  }
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #000;
+  }
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+  
+    color: white;
+    display: flex;
+    flex-direction: column;
+  }
+  .contenido {
+    flex: 1;
+    padding: 20px;
+  }
+  .footer {
+    background: radial-gradient(circle at center, #111, #222);
+    border: 3px solid #ccc;
+    border-radius: 50px;
+    margin: 0 auto 50px auto;
+    padding: 30px;
+    width: 90%;
+    max-width: 1000000px;
+    text-align: center;
+    box-shadow: 0 0 15px #f0f;
+  }
+  
+  .footer p {
+    margin: 5px 0;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .intro {
+    background: linear-gradient(to bottom right, #160040, #3c0074, #740043);
+    padding: 40px;
+    border-radius: 40px;
+    border: 2px solid #ffffff;
+    max-width: 950px;
+    width: 90%;
+    margin: 50px auto;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+    color: white;
+    text-align: justify;
+    font-family: 'Segoe UI', sans-serif;
+      margin-top: 100px; /* Ajusta la distancia, prueba 50-100px */
+  padding: 20px;
+  }
+  
+  .intro h1 {
+    text-align: center;
+    font-size: 60px;
+    margin-bottom: 10px;
+    font-weight: 900;
+  }
+  
+  .intro h2 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 30px;
+  }
+  
+  .intro p {
+    font-size: 19px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    color: #f1f1f1;
+  }
+  
+
+ body {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+body.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+body.fade-out {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+/* Animación de escritura para ¡WELCOME! */
+.welcome-box h1 {
+  display: inline-block;
+  font-size: 3.5rem;
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid white;
+  width: 0;
+  animation: typing 2s steps(10) forwards, blink 0.7s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* Animación de aparición para la introducción */
+.intro {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.intro.show {
+  opacity: 1;
+  transform: translateY(0);
+}

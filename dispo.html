@@ -1,0 +1,107 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dispo.css">
+    <title>Agregar Dispositivo</title>
+  </head>
+  <body>
+
+    
+
+    <div class="sidebar">
+      <a href="cuenta2.php" class="back-arrow">←</a>
+      <div class="sidebar-links">
+        <a href="#" id="cerrarSesionBtn">Cerrar sesión</a>
+        <a href="#">Configuración</a>
+        <a href="#">Ayuda</a>
+      </div>
+    </div>
+    
+
+    <div class="container">
+      <button class="title-btn">ADD</button>
+      <form action="dispositivos.php" method="POST" onsubmit="return validateForm()">
+        
+        <div class="input-group">
+          <label>IP</label>
+          <input type="text" name="Ip" placeholder="--- ---- ---- ---- ---" required>
+        </div>
+
+        <div class="input-group">
+          <label>Name</label>
+          <input type="text" name="name" required>
+        </div>
+
+        <button type="submit" class="continue-btn">Continue</button>
+      </form>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Activa la animación del contenedor
+        const container = document.querySelector('.container');
+        container.classList.add('show');
+      });
+    </script>
+
+    <script>
+    // Animación de entrada al cargar
+    window.addEventListener("load", () => {
+      document.body.classList.add("loaded");
+    });
+
+    // Animación de salida al cambiar de página
+    document.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href && !href.startsWith('#') && !href.startsWith('javascript')) {
+          e.preventDefault();
+          document.body.classList.add('fade-out');
+          setTimeout(() => {
+            window.location.href = href;
+          }, 600);
+        }
+      });
+    });
+  </script>
+    <script>
+  document.getElementById('cerrarSesionBtn').addEventListener('click', function(event) {
+    event.preventDefault();
+
+    // Crear modal
+    const modal = document.createElement('div');
+    modal.classList.add('custom-modal');
+    modal.innerHTML = `
+      <div class="custom-modal-content">
+        <h3>¿Cerrar sesión?</h3>
+        <p>¿Seguro que deseas salir de tu cuenta?</p>
+        <div class="modal-buttons">
+          <button id="confirmLogout">Confirmar</button>
+          <button id="cancelLogout">Cancelar</button>
+        </div>
+      </div>
+    `;
+
+    document.body.appendChild(modal);
+
+    // Acciones
+    document.getElementById('confirmLogout').addEventListener('click', () => {
+      window.location.href = "logout.php";
+    });
+
+    document.getElementById('cancelLogout').addEventListener('click', () => {
+      modal.remove();
+    });
+  });
+  </script>
+
+
+
+
+
+  </body>
+  </html>
+
+

@@ -1,0 +1,252 @@
+body {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+body.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+body.fade-out {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+
+
+
+
+
+.contact-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem;
+  }
+  
+  .contact-box {
+    background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(50, 50, 100, 0.4));
+    padding: 3rem;
+    border-radius: 2.5rem;
+    max-width: 800px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+  }
+  
+  .contact-box p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+  
+  .contact-info {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+  
+  .contact-info a {
+    color: #fff;
+    text-decoration: underline;
+  }
+  
+  .social-follow a {
+    color: white;
+    text-decoration: underline;
+    margin: 0 8px;
+    font-weight: 500;
+  }
+  
+  .social-follow a:hover {
+    color: #ddd;
+  }
+  body {
+    background: linear-gradient(120deg, #0d0f3c, #1a0258, #ff004c);
+    min-height: 100vh;
+    color: white;
+  }* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body {
+    background: linear-gradient(120deg, #0d0f3c, #1a0258, #ff004c);
+    min-height: 100vh;
+    color: white;
+  }
+  
+  .navbar {
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    margin: 1rem;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 2rem;
+    font-size: 1.1rem;
+    border-left: 1px solid white;
+    padding-left: 2rem;
+  }
+  .nav-links a:hover {
+    text-decoration: underline;
+  }
+  
+  .main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+  }
+  
+  .welcome-box {
+    background: linear-gradient(to right, rgba(50,50,90,0.6), rgba(200,0,100,0.4));
+    padding: 3rem 5rem;
+    border-radius: 2rem;
+    text-align: center;
+    backdrop-filter: blur(10px);
+  }
+  
+  .welcome-box h1 {
+    font-size: 4rem;
+    font-weight: bold;
+  }
+  .contenido {
+    flex: 1;
+    padding: 20px;}
+
+.footer {
+  background: radial-gradient(circle at center, #111, #222);
+  border: 3px solid #ccc;
+  border-radius: 50px;
+  margin: 100px auto 50px auto; /* ↑ antes era 0 auto 50px auto */
+  padding: 30px;
+  width: 90%;
+  max-width: 1000000px;
+  text-align: center;
+  box-shadow: 0 0 15px #f0f;
+}
+.contenedor {
+  border: 2px solid purple;
+  padding: 20px;
+  width: fit-content;
+}
+h1 {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+  grid-template-rows: repeat(2, 150px);
+  gap: 15px;
+}
+/* imagenes */
+.imagen {
+ justify-content: center;
+  width: 200px;    /* Ancho fijo */
+  height: 150px;   /* Alto fijo */
+  object-fit: cover;  /* Ajusta la imagen para que no se deforme */
+  border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* fin imagenes */
+.mas-fotos {
+  background-color: #ccc;
+  color: blue;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.peque {
+  background-color: #ccc;
+  grid-column: 3;
+  grid-row: 2;
+}
+
+
+
+.extra-gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 90px;
+  margin: 50px auto;
+  width: 100%;
+  min-height: 300px; /* asegúrate que tenga altura */
+}
+
+.image-vertical {
+  width: 300px;
+  height: 300px;
+  border-radius: 15px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.image-vertical img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Estado inicial: ocultas arriba */
+.image-vertical {
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: all 0.6s ease;
+}
+
+/* Estado visible: caen y aparecen */
+.image-vertical.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+
+.contact-box {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.contact-box.show {
+  opacity: 1;
+  transform: translateY(0);
+}

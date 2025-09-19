@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About</title>
+    <link rel="stylesheet" href="contacto.css?v=2" />
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo-container">
+          <img src="imag/ola.png" alt="Logo" class="logo" />
+          <span class="brand">LonelySafe</span>
+        </div>
+        <nav class="nav-links">
+            <a href="inicio.html">Home</a>
+            <a href="contacto.html">About</a>
+            <a href="SignUp.html">Sign Up</a>
+            <a href="SingIn2.php">Sign In</a>
+        </nav>
+    </header>
+
+    <section class="contact-section" id="contact">
+        <div class="contact-box">
+          <p class="contact-intro">
+            ¿Tenes dudas, sugerencias o te interesa saber más sobre nuestro proyecto de puerta de seguridad inteligente? ¡Estamos para ayudarte!
+          </p>
+      
+          <p class="contact-text">
+            Podés escribirnos si querés conocer más sobre cómo funciona el sistema, colaborar con el proyecto o simplemente dejarnos tus comentarios. Valoramos mucho el interés y el aporte de cada persona.
+          </p>
+      
+          <p class="contact-info">
+            📧 <strong>Correo electrónico:</strong> <a href="mailto:Jurecax@gmail.com">Jurecax@gmail.com</a><br>
+            💬 <strong>WhatsApp:</strong> +57 310-5496-494<br>
+            📍 <strong>Ubicación:</strong> El Peñol - I.E. Leon XIII
+          </p>
+      
+          <p class="social-follow">
+            También podés seguirnos en nuestras redes para ver el avance del proyecto y novedades.<br><br>
+            <a href="#">Instagram</a> |
+            <a href="#">Twitter</a> |
+            <a href="#">Whatsapp</a>
+          </p>
+        </div>
+    </section>
+
+    <!-- Galería de 3 imágenes verticales -->
+    <section class="extra-gallery">
+      <div class="image-vertical">
+        <img src="imag/nose.jpeg" alt="Imagen 1">
+      </div>
+      <div class="image-vertical">
+        <img src="imag/hongo.jpeg" alt="Imagen 2">
+      </div>
+      <div class="image-vertical">
+        <img src="imag/ola.png" alt="Imagen 3">
+      </div>
+    </section>
+
+    <footer class="footer">
+       <p><strong>Copyright (©) 2025 - The Lonely Boys</strong></p>
+       <p>El contenido de este sitio, incluyendo textos, diseños y código, es propiedad del equipo desarrollador y no puede ser reproducido sin autorización previa.</p>
+    </footer>
+  
+  
+  <script>
+  const images = document.querySelectorAll('.image-vertical');
+
+  function checkScroll() {
+    const triggerBottom = window.innerHeight * 0.9;
+
+    images.forEach(img => {
+      const imgTop = img.getBoundingClientRect().top;
+
+      if (imgTop < triggerBottom) {
+        img.classList.add('show');
+      } else {
+        img.classList.remove('show');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', checkScroll);
+  window.addEventListener('load', checkScroll);
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.body.classList.add('fade-in');
+
+  // Hacer que la caja aparezca después de la transición de página
+  setTimeout(() => {
+    document.querySelector('.contact-box').classList.add('show');
+  }, 300); // este delay debe coincidir con la transición de página
+
+  // Manejar la transición al salir
+  document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href && !href.startsWith('#') && !href.startsWith('javascript')) {
+        e.preventDefault();
+        document.body.classList.remove('fade-in');
+        document.body.classList.add('fade-out');
+        setTimeout(() => {
+          window.location.href = href;
+        }, 600); // debe coincidir con la duración de la transición
+      }
+    });
+  });
+});
+</script>
+
+  
+  </body>
+</html>
